@@ -1,0 +1,14 @@
+services:
+  zigbee2mqtt:
+    image: koenkk/zigbee2mqtt
+    container_name: zigbee2mqtt
+    restart: unless-stopped
+    network_mode: host
+
+    volumes:
+      - /home/dietpi/docker/zigbee2mqtt/data:/app/data
+      - /dev/serial/by-id:/dev/serial/by-id:ro
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+    environment:
+      - TZ=Etc/UTC

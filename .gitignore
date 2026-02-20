@@ -1,0 +1,86 @@
+# Backups
+backup.tar
+*.tar
+*.gz
+*.zip
+
+# Generic runtime stuff
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.log.*
+*.pid
+
+# Home Assistant
+homeassistant/data/
+
+# Mediacenter runtimes (Jellyfin, Sonarr, Radarr, Lidarr, Bazarr, Jellyseerr, qBittorrent, etc.)
+mediacenter/config/**/logs/
+mediacenter/config/**/logs.db
+mediacenter/config/**/MediaCover/
+mediacenter/config/**/cache/
+mediacenter/config/**/data/
+mediacenter/config/**/db/
+mediacenter/config/**/db*/
+mediacenter/config/**/subtitles/
+mediacenter/config/**/metadata/
+mediacenter/config/**/plugins/
+mediacenter/config/**/root/
+mediacenter/config/**/.aspnet/
+mediacenter/config/**/.cache/
+
+# Jellyseerr DB and logs
+mediacenter/config/jellyseerr/db/
+mediacenter/config/jellyseerr/logs/
+
+# qBittorrent runtime
+mediacenter/config/qbittorrent/qBittorrent/BT_backup/
+mediacenter/config/qbittorrent/qBittorrent/GeoDB/
+mediacenter/config/qbittorrent/qBittorrent/rss/
+mediacenter/config/qbittorrent/qBittorrent/logs/
+mediacenter/config/qbittorrent/qBittorrent/watched_folders.json
+mediacenter/config/qbittorrent/qBittorrent/lockfile
+
+# Prowlarr: DB + logs (Definitions are optional; can be regenerated)
+mediacenter/config/prowlarr/prowlarr.db*
+mediacenter/config/prowlarr/logs*
+mediacenter/config/prowlarr/asp/
+mediacenter/config/prowlarr/Definitions/
+
+# VPN / WireGuard secrets
+mediacenter/gluetun/
+mediacenter/wg0.conf
+mediacenter/gluetun/wg0.conf
+mediacenter/gluetun/wireguard/
+mediacenter/wg0.conff
+
+# nginx-proxy runtime
+nginxproxy/data/
+nginxproxy/letsencrypt/
+
+# Pi-hole etc data (if you later mount those here)
+pihole/etc-pihole/
+pihole/etc-dnsmasq.d/
+
+# Docker data dirs you don’t want in git
+mediacenter/data/
+portainer/data/
+
+# Do not track environment files
+mediacenter/.env
+*.env
+
+# Do not track any app configs yet (can add .example later)
+mediacenter/config/
+
+# Zigbee2MQTT runtime + secrets
+zigbee2mqtt/data/
+
+# Just to be sure, also ignore any db/log/pid files
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.log.*
+*.pid

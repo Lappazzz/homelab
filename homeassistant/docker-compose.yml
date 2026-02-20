@@ -1,0 +1,21 @@
+---
+services:
+  homeassistant:
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    container_name: homeassistant
+    network_mode: host
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /home/dietpi/docker/homeassistant/data:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/dbus:/run/dbus:ro
+      - /run/dbus:/run/dbus:ro
+    ports:
+      - 8123:8123 #optional
